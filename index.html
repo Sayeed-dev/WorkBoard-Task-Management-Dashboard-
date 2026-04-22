@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FontAwsome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Main CSS  -->
+    <link href="./src/output.css" rel="stylesheet" />
+    <title>WorkBoard | Organize Your Work Efficiently</title>
+  </head>
+  <body class="google-sans bg-blue-50">
+    <section class="w-11/12 mx-auto h-screen">
+      <!-- Header Section  -->
+      <header class="w-full flex justify-between items-center mt-5">
+        <div class="left">
+          <h1 class="text-2xl font-extrabold text-blue-800">WorkBoard</h1>
+          <h2 class="text-md uppercase">Organize Your Work Efficiently</h2>
+        </div>
+        <div class="right">
+          <button
+            class="add-btn bg-blue-300 py-1.5 px-3 rounded-full font-semibold"
+          >
+            Add New Task
+          </button>
+        </div>
+      </header>
+      <!--  Container  -->
+      <div class="dash-board flex gap-8 w-full h-11/12 mt-6">
+        <!-- ToDo Container -->
+        <div
+          id="todo"
+          class="task-container w-full h-11/12 bg-gray-900 p-6 rounded-xl"
+        >
+          <header class="flex justify-between mb-4">
+            <h3 class="text-blue-50 font-semibold text-md">ToDo</h3>
+            <span class="counter text-blue-50 font-semibold text-md">0</span>
+          </header>
+
+        </div>
+        <!-- In Progress Container  -->
+        <div
+          id="progress"
+          class="task-container w-full h-11/12 bg-gray-900 p-6 rounded-xl"
+        >
+          <header class="flex justify-between mb-4">
+            <h3 class="text-blue-50 font-semibold text-md">In Progress</h3>
+            <span class="counter text-blue-50 font-semibold text-md">0</span>
+          </header>
+        </div>
+        <!-- Done Container -->
+        <div
+          id="done"
+          class="task-container w-full h-11/12 bg-gray-900 p-6 rounded-xl"
+        >
+          <header class="flex justify-between mb-4">
+            <h3 class="text-blue-50 font-semibold text-md">Done</h3>
+            <span class="counter text-blue-50 font-semibold text-md">0</span>
+          </header>
+        </div>
+      </div>
+    </section>
+
+    <div
+      id="modal"
+      class="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto overflow-x-hidden bg-black/20 p-4 backdrop-blur-sm hidden"
+    >
+      <div
+        class="relative w-full max-w-lg rounded-3xl border bg-gray-900 p-10 shadow-2xl backdrop-blur-xl"
+      >
+        <div class="text-center">
+          <i
+            class="text-7xl text-blue-300 fa-solid fa-clipboard-check mb-3.5"
+          ></i>
+
+          <input
+            type="text"
+            placeholder="Task Title"
+            class="title bg-blue-50 py-3 px-3 rounded-md outline-0 w-full my-2"
+          />
+          <textarea
+            type="text"
+            placeholder="Write your task..."
+            class="description bg-blue-50 py-3 px-3 rounded-md outline-0 w-full my-2"
+          ></textarea>
+
+          <button
+            class="submit-btn bg-gray-100 text-blue-950 rounded-xl transition hover:bg-opacity-90 active:scale-95 py-3 px-5 font-semibold"
+          >
+            Add Task
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./src/app.js"></script>
+  </body>
+</html>
